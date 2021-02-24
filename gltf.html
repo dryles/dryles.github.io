@@ -1,5 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
 
 
@@ -8,11 +8,15 @@
   
   <a-scene >
     <!-- we use cors proxy to avoid cross-origin problems -->
-   
+   <a-light type="point" intensity="0" position="-2 2 2"
+           animation="property: light.intensity;
+                      dur: 7000; from: 0; to: 1.5;
+                      dir: alternate; loop: true">
+  </a-light>
       <a-entity gltf-model="url(scene.gltf)" 
                 scale="0.5 0.5 0.5"
                 position="0 0 -10"
-           
+                animation-mixer
                 >
       </a-entity>
     
